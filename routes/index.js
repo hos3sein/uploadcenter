@@ -1,11 +1,15 @@
 const express = require("express");
 const router = express.Router();
 
-//prefix router Approve
-const uploadHndeler = require("./uploadHandeler");
-router.use("/", uploadHndeler);
+//prefix router User
+const upload = require("./upload");
+router.use("/", upload);
+
+const interService=require("./interService")
+
+router.use("/interservice", interService);
+
 
 //prefix router Dev
-
 
 module.exports = router;

@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: "approve3",
+      name: "content3",
       script: "./index.js",
       // Options reference: https://pm2.io/doc/en/runtime/reference/ecosystem-file/
       args: "",
@@ -30,9 +30,9 @@ module.exports = {
       user: "root",
       // port: "22",
       host: "121.41.58.117",
-      ref: "origin/main",
-      repo: "git@gitlab.com:alisalhi3535/approve3.git",
-      path: "/root/microService/ash3/approve",
+      ref: "origin/Content",
+      repo: "git@gitlab.com:tivasoft/n.ash3.backend.git",
+      path: "/root/microService/ash3/content",
       // "post-deploy": "pm2 reload ecosystem.config.js --env development",
       "post-deploy":
         "npm install && pm2 startOrRestart ecosystem.config.js --env development",
@@ -41,9 +41,9 @@ module.exports = {
       user: "root",
       // port: "22",
       host: "121.41.58.117",
-      ref: "origin/main",
-      repo: "git@gitlab.com:alisalhi3535/approve3.git",
-      path: "/root/microService/ash3/approve",
+      ref: "origin/Content",
+      repo: "git@gitlab.com:tivasoft/n.ash3.backend.git",
+      path: "/root/microService/ash3/content",
       // "post-deploy": "pm2 reload ecosystem.config.js --env development",
       "post-deploy":
         "npm install && pm2 startOrRestart ecosystem.config.js --env production",

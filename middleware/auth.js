@@ -1,10 +1,10 @@
 const jwt = require("jsonwebtoken");
 const asyncHandler = require("./async");
 const ErrorResponse = require("../utils/errorResponse");
+const _ = require("lodash");
 
 // Protect routes
 exports.protect = asyncHandler(async (req, res, next) => {
-  // console.log("first");
   let token;
 
   if (
@@ -37,32 +37,5 @@ exports.protect = asyncHandler(async (req, res, next) => {
   }
 });
 
-// !in dorost nist
 // Grant access to specific roles
-exports.authorize = (...roles) => {
-  return (req, res, next) => {
-    // console.log("req.user.roleModel", req.user.roleModel <= 5);
-    if (req.user && req.user.roleModel <= 5) {
-      if (!roles.includes(req.user.roleModel)) {
-        return next(
-          new ErrorResponse(
-            `User role ${req.user.roleModel} is not authorized to access this route`,
-            403
-          )
-        );
-      }
-      next();
-    }
-    if (req.user && req.user.role <= 5) {
-      if (!roles.includes(req.user.role)) {
-        return next(
-          new ErrorResponse(
-            `admin role ${req.admin.role} is not authorized to access this route`,
-            403
-          )
-        );
-      }
-      next();
-    }
-  };
-};
+
