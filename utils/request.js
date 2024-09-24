@@ -125,7 +125,7 @@ exports.addGroup = async (id, body) => {
 
 
 exports.addprofile = async (body,token) => {
-  const url = `https://ash3authentication.chinabizsetup.com/api/v1/auth/picprofile`;
+  const url = `${process.env.SERVICE_AUTHENTICATION}/api/v1/auth/picprofile`;
   try {
     const rawResponse = await fetch(url, {
       method: "POST",
